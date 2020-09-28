@@ -1,0 +1,98 @@
+* {
+	margin: 0px;
+}
+
+body {
+	background: #353638;
+}
+
+.timer {
+	/*display: none;*/
+	position: relative;
+	display: inline-block;
+	width: 225px;
+	height: 120px;
+	background: #696969;
+	margin-right: 10%;
+	margin: 5%;
+}
+
+.timer-plus {
+	position: relative;
+	display: inline-block;
+	width: 225px;
+	height: 120px;
+	background: #696969;
+	margin-right: 10%;
+	margin: 5%;
+}
+
+.MyForm {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10%;
+	font-size: 22px;
+}
+
+.time {
+	width: 35%;
+	height: 18px;
+	font-size: 20px;
+	color: #9E9E9E;
+	background: #696969;
+	margin-left: 30%;
+	margin-top: 10%;
+	border: none; 
+	outline: none;
+}
+
+.line {
+	margin-top: 10%;
+}
+
+.mini-timer > p > *  {
+	background: #696969;
+	border: none; 
+	outline: none;
+}
+
+.triangle {
+	margin-top: 10px;
+	margin-left: 30%;
+	cursor: pointer;
+}
+
+.pause {
+	margin-left: -15%;
+	visibility: hidden;
+	cursor: pointer;	
+}
+
+.square {
+	margin-left: 15%;
+	cursor: pointer;
+}
+
+.square-white {
+	margin-left: -16%;
+	visibility: hidden;	
+	cursor: pointer;
+}
+
+#plus-button {
+	background: #696969;
+	border: none; 
+	outline: none;
+	cursor: pointer;
+	/*padding: 23%;*/
+}
+
+#plus {
+	font-size: 32px;
+	/*padding: 33%;*/
+	color: #FFFFFF;
+	margin-top: 400%;
+	margin-left: 500%;
+	/*margin-bottom: 400%;*/
+}
