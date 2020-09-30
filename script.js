@@ -12,51 +12,6 @@
 //         document.MyForm.stopwatch.value=readout; 
 //    } 
    
-//    //функция для старта секундомера
-//    function StartTIME() { 
-//         var cdateObj = new Date(); 
-//         var t = (cdateObj.getTime() - dateObj.getTime())-(s*1000); 
-//         if (t>999) { s++; } 
-//         if (s>=(m*base)) { 
-//                 ts=0; 
-//                 m++; 
-//         } else { 
-//                 ts=parseInt((ms/100)+s); 
-//                 if(ts>=base) { ts=ts-((m-1)*base); } 
-//         } 
-//         if (m>(h*base)) { 
-//                 tm=1; 
-//                 h++; 
-//         } else { 
-//                 tm=parseInt((ms/100)+m); 
-//                 if(tm>=base) { tm=tm-((h-1)*base); } 
-//         } 
-//         ms = Math.round(t/10); 
-//         if (ms>99) {ms=0;} 
-//         if (ms==0) {ms='00';} 
-//         if (ms>0&&ms<=9) { ms = '0'+ms; } 
-//         if (ts>0) { ds = ts; if (ts<10) { ds = '0'+ts; }} else { ds = '00'; } 
-//         dm=tm-1; 
-//         if (dm>0) { if (dm<10) { dm = '0'+dm; }} else { dm = '00'; } 
-//         dh=h-1; 
-//         if (dh>0) { if (dh<10) { dh = '0'+dh; }} else { dh = '00'; } 
-//         readout = dh + ':' + dm + ':' + ds + '.' + ms; 
-//         document.MyForm.stopwatch.value = readout; 
-//         clocktimer = setTimeout("StartTIME()",1); 
-//    } 
-   
-//    //Функция запуска и остановки
-//    function StartStop() { 
-//         if (init==0){ 
-//                 ClearСlock();
-//                 dateObj = new Date(); 
-//                 StartTIME(); 
-//                 init=1; 
-//         } else { 
-//                 clearTimeout(clocktimer);
-//                 init=0;
-//         } 
-//    } 
 
 var activate;
 var startButton;
@@ -134,6 +89,24 @@ function startTIME(kolvo) {
   }
 }
 
+function startTIME_original() {
+  if(!activate){
+    startButton.value = "Pause";
+    activate = !activate;
+    if(startDate == undefined) startDate = new Date();
+    executeTimer();
+    return;
+
+  }
+  else {
+    startButton.value = "Start";
+    activate = !activate;
+    clearTimeout(clocktimer);
+    return;
+  }
+}
+
+
 function stopALL(){
   console.log("stopALL")
   let line = document.querySelector(".line");
@@ -154,6 +127,22 @@ function stopALL(){
   startButton.value = "Start";
   activate = false;
 }
+
+
+function stopALL_original() {
+square.style.visibility="visible";
+  square_white.style.visibility="hidden";
+  triangle.style.visibility="visible";
+  pause.style.visibility="hidden";
+  time.style.color="#9E9E9E";
+  line.style.background="#696969";
+  clearTimeout(clocktimer);
+  startDate = undefined;
+  document.clockform.clock.value='00:00:00.00';
+  startButton.value = "Start";
+  activate = false;
+}
+
 
 function addTimer() {
   console.log("addTimer")
