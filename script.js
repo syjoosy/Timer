@@ -1,18 +1,3 @@
-// var base = 60; 
-//    var clocktimer,dateObj,dh,dm,ds,ms; 
-//    var readout=''; 
-//    var h=1,m=1,tm=1,s=0,ts=0,ms=0,init=0; 
-   
-//    //функция для очистки поля
-//    function ClearСlock() { 
-//         clearTimeout(clocktimer); 
-//         h=1;m=1;tm=1;s=0;ts=0;ms=0; 
-//         init=0;
-//         readout='00:00:00.00'; 
-//         document.MyForm.stopwatch.value=readout; 
-//    } 
-   
-
 var activate;
 var startButton;
 
